@@ -1,6 +1,7 @@
 from pyautogui import *
 import pyautogui
 import keyboard
+import time
 
 print("Starting!")
 
@@ -32,4 +33,5 @@ while 1:
         # press the key corresponding to x
         keyboard.press_and_release(str(x))
     
+    time.sleep(1)
     x = (x + 1) % 3
