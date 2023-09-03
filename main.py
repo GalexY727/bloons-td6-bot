@@ -5,15 +5,17 @@ import time
 
 print("Starting!")
 
-x = 0
+index = 0
 
 while 1:
-    if x == 0:
+    if index == 0:
         image = 'heli.png'
-    elif x == 1:
+    elif index == 1:
         image = 'snipercrate.png'
-    elif x == 2:
+    elif index == 2:
         image = 'jungledruid.png'
+    elif index == 3:
+        image = 'monkeynomics.png'
 
     leftTabOpen = pyautogui.locateOnScreen('dropdown.png', region=(150,800,1250,280), confidence=0.9)
     result = pyautogui.locateOnScreen(image, region=(150,800,1250,280), confidence=0.9)
@@ -21,17 +23,21 @@ while 1:
     if result != None:
         result = pyautogui.center(result)
         x, y = result
+        print(x, (x-160)/90)
         # get how many pixels it is from the left.
         if (leftTabOpen != None):
             x = x - 400
-        x = x/120
-        x = int(x)
-        if x == 11:
-            x = 'minus'
+        x = (x-160)/90
+        x = int(x+0.5)
+
+        if x == 10:
+            x = '0'
+        elif x == 11:
+            x = '-'
         elif x == 12:
-            x = 'plus'
+            x = '+'
         # press the key corresponding to x
         keyboard.press_and_release(str(x))
     
     time.sleep(1)
-    x = (x + 1) % 3
+    index = (index + 1) % 4
