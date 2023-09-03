@@ -23,7 +23,6 @@ while 1:
     if result != None:
         result = pyautogui.center(result)
         x, y = result
-        print(x, (x-160)/90)
         # get how many pixels it is from the left.
         if (leftTabOpen != None):
             x = x - 400
