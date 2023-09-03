@@ -9,15 +9,15 @@ index = 0
 
 while 1:
     if index == 0:
-        image = 'heli.png'
+        image = './media/heli.png'
     elif index == 1:
-        image = 'snipercrate.png'
+        image = './media/snipercrate.png'
     elif index == 2:
-        image = 'jungledruid.png'
+        image = './media/jungledruid.png'
     elif index == 3:
-        image = 'monkeynomics.png'
+        image = './media/monkeynomics.png'
 
-    leftTabOpen = pyautogui.locateOnScreen('dropdown.png', region=(150,800,1250,280), confidence=0.9)
+    leftTabOpen = pyautogui.locateOnScreen('./media/dropdown.png', region=(150,800,1250,280), confidence=0.9)
     result = pyautogui.locateOnScreen(image, region=(150,800,1250,280), confidence=0.9)
 
     if result != None:
